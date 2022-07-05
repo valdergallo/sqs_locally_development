@@ -13,11 +13,13 @@ def client():
     )
 
 
-def default_queue(client=client(), queue_name="default"):
+def default_queue(client=None, queue_name="default"):
+    if client is None:
+        client = client()
     return client.get_queue_by_name(QueueName=queue_name)
 
 
-def create_queue(client=client(), name="default", attributes=None):
+def create_queue(client=None, name="default", attributes=None):
     """
     Creates an Amazon SQS queue.
 
@@ -27,6 +29,9 @@ def create_queue(client=client(), name="default", attributes=None):
     :return: A Queue object that contains metadata about the queue and that can be used
              to perform queue operations like sending and receiving messages.
     """
+    if client is None:
+        client = client()
+        
     if not attributes:
         attributes = {}
 
