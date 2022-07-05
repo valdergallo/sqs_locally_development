@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  aws_sqs:
+    image: softwaremill/elasticmq:latest
+    container_name: aws_sqs
+    networks:
+      - lambda-local
+    ports:
+      - "9325:9325"
+      - "9324:9324"
+
+
+networks:
+  lambda-local:

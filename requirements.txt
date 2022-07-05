@@ -1,0 +1,8 @@
+boto3==1.24.4
+moto==3.1.12
+pytest==7.1.2
+pytest-benchmark==3.4.1
+pytest-cov==3.0.0
+pytest-cover==3.0.0
+pytest-coverage==0.0
+pytest-mock==3.7.0
